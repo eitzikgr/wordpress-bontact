@@ -25,7 +25,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-define( 'BONTACT_BASE', plugin_basename( __FILE__ ) );
+define( 'BONTACT_BASE_FILE', __FILE__ );
+define( 'BONTACT_BASE', plugin_basename( BONTACT_BASE_FILE ) );
 
 include( 'classes/class-bont-settings.php' );
 include( 'classes/class-bont-admin-ui.php' );
