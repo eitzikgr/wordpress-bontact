@@ -28,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 define( 'BONTACT_BASE', plugin_basename( __FILE__ ) );
 
 include( 'classes/class-bont-settings.php' );
+include( 'classes/class-bont-admin-ui.php' );
 include( 'classes/class-bont-front-end.php' );
 
 
@@ -39,6 +40,11 @@ class BONT_Main {
 	public $settings;
 
 	/**
+	 * @var BONT_Admin_UI
+	 */
+	public $admin_ui;
+	
+	/**
 	 * @var BONT_Front_End
 	 */
 	public $front_end;
@@ -49,6 +55,7 @@ class BONT_Main {
 	
 	public function __construct() {
 		$this->settings = new BONT_Settings();
+		$this->admin_ui = new BONT_Admin_UI();
 		$this->front_end = new BONT_Front_End();
 		
 		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
