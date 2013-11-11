@@ -1,6 +1,6 @@
 === Bontact ===
 Contributors: KingYes
-Tags: bontact
+Tags: widget, widgets, contact, contact form, plugin, livechat, live chat, chat, support, customer service, real time, callback, callme, click to call, website chat, chat software
 Requires at least: 3.5
 Tested up to: 3.7.1
 Stable tag: 1.0
