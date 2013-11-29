@@ -100,25 +100,7 @@ class BONT_Settings {
 					<?php _e( 'The Bontact Dashboard offers full functionality and also allows you to provide new reps with their own password.', 'bontact' ); ?>
 				</p>
 
-				<hr />
-				
-				<h3><?php _e( 'Quick Start with these first steps:', 'bontact' ); ?></h3>
-				<p><a class="button" href="<?php echo admin_url( 'admin.php?page=bont-connectionsettings' ); ?>"><?php _e( 'Click here to edit Widget Features', 'bontact' ); ?></a></p>
-				
-				<div>
-					<ul class="bont-ul-circle">
-						<li><?php _e( 'Enter the details of the Reps who will be participating in the chat.', 'bontact' ); ?></li>
-						<li><?php _e( 'Enter the target phone number for the Click-to-Call feature.', 'bontact' ); ?></li>
-						<li><?php _e( 'Enter the target phone number for incoming text messages.', 'bontact' ); ?></li>
-						<li><?php _e( 'Enter the target email address for incoming emails. Note: The default address is your sign-in email.', 'bontact' ); ?></li>
-					</ul>
-				</div>
-				
-				<p><a class="button" href="<?php admin_url( 'admin.php?page=bont-widgetsettings' ); ?>"><?php _e( 'Configure the look of your Bontact widget', 'bontact' ); ?></a></p>
-				
-				<p><a class="button" href="<?php admin_url( 'admin.php?page=bont-companyinfo' ); ?>"><?php _e( 'Update your company\'s details', 'bontact' ); ?></a></p>
-				
-				<p class="bont-get-space"><?php _e( sprintf( 'Need help? Contact us at <a href="mailto:%1$s">%1$s</a> and we\'ll provide you with any info you need.', 'sales@bontact.com' ), 'bontact' ); ?></p>
+				<p><?php _e( sprintf( 'Need help? Contact us at <a href="mailto:%1$s">%1$s</a> and we\'ll provide you with any info you need.', 'sales@bontact.com' ), 'bontact' ); ?></p>
 
 				<hr />
 				
