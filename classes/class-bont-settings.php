@@ -15,7 +15,6 @@ class BONT_Settings {
 	protected $_option_slug;
 	
 	protected $_api_login_url = 'https://dashboard.bontact.com/api/bontactapi.aspx?func=login&username=%s&password=%s';
-	protected $_api_signup_url = 'https://dashboard.bontact.com/api/bontactapi.aspx?func=signup&username=%s&password=%s';
 	
 	protected function _do_redirect_option_page( $message_code = null ) {
 		$return_url = add_query_arg( 'page', $this->_option_slug, admin_url( 'admin.php' ) );
@@ -43,13 +42,12 @@ class BONT_Settings {
 				$this->_do_redirect_option_page( 5 );
 			}
 
-			if ( 'login' === $_REQUEST['bont-action'] || 'register' === $_REQUEST['bont-action'] ) {
+			if ( 'login' === $_REQUEST['bont-action'] ) {
 				if ( empty( $_REQUEST['nonce'] ) || ! check_ajax_referer( 'bontact_' . $_REQUEST['bont-action'] . '_' . get_current_user_id(), 'nonce', false ) ) {
 					$this->_do_redirect_option_page( 6 );
 				}
 
-				$api_url = 'login' === $_REQUEST['bont-action'] ? $this->_api_login_url : $this->_api_signup_url;
-				$response = wp_remote_get( sprintf( $api_url, $_POST['bontact']['username'], $_POST['bontact']['password'] ), array( 'sslverify' => false, 'timeout' => 30 ) );
+				$response = wp_remote_get( sprintf( $this->_api_login_url, $_POST['bontact']['username'], $_POST['bontact']['password'] ), array( 'sslverify' => false, 'timeout' => 30 ) );
 
 				if ( is_wp_error( $response ) || 200 !== $response['response']['code'] ) {
 					$this->_do_redirect_option_page( 4 );
@@ -66,13 +64,8 @@ class BONT_Settings {
 				$options['password'] = $_POST['bontact']['password'];
 
 				update_option( $this->_option_slug, $options );
-
-				$msg_code = 'login' === $_REQUEST['bont-action'] ? 2 : 1;
-				$this->_do_redirect_option_page( $msg_code );
-
-				if ( 'register' === $_POST['type-submit'] ) {
-
-				}
+				
+				$this->_do_redirect_option_page( 2 );
 			}
 		}
 	}
@@ -118,36 +111,11 @@ class BONT_Settings {
 				
 				<p><a class="button" href="<?php echo $this->_get_logout_link(); ?>" onclick="return confirm('<?php _e( 'Are you sure you want to disconnect your Bontact account from your WordPress site?', 'bontact' ); ?>');"><?php _e( 'Disconnect your Bontact account from your WordPress site', 'bontact' ); ?></a></p>
 			<?php else : ?>
-				<h3><?php _e( 'Register:', 'bontact' ); ?></h3>
-				<form action="" method="post">
-					<input type="hidden" name="page" value="<?php echo $this->_option_slug; ?>" />
-					<input type="hidden" name="nonce" value="<?php echo wp_create_nonce( 'bontact_register_' . get_current_user_id() ); ?>" />
-					<input type="hidden" name="bont-action" value="register" />
-					<table class="form-table">
-						<tr valign="top">
-							<th scope="row">
-								<label for="bontact_username"><?php _e( 'Username (email):', 'bontact' ); ?></label>
-							</th>
-							<td>
-								<input id="bontact_username" type="text" name="bontact[username]" value="" autocomplete="off" />
-							</td>
-						</tr>
-						<tr valign="top">
-							<th scope="row">
-								<label for="bontact_password"><?php _e( 'Password:', 'bontact' ); ?></label>
-							</th>
-							<td>
-								<input id="bontact_password" type="password" name="bontact[password]" value="" autocomplete="off" />
-							</td>
-						</tr>
-					</table>
-					<div class="submit">
-						<input type="submit" class="button button-primary" value="<?php _e( 'Register', 'bontact' ); ?>" />
-					</div>
-				</form>
-
-				<hr />
-				<h3><?php _e( 'Login:', 'bontact' ); ?></h3>
+				
+				<h3><?php _e( 'Login using your Bontact account:', 'bontact' ); ?></h3>
+				<p class="description">
+					<?php printf( __( 'If you don\'t have an account <a href="%s" target="_blank">click here to sign up</a>', 'bontact' ), 'http://bontact.com/?utm_source=Plugins&utm_medium=WP&utm_campaign=WP-Bontact-Plugin' ); ?>
+				</p>
 				<form action="" method="post">
 					<input type="hidden" name="page" value="<?php echo $this->_option_slug; ?>" />
 					<input type="hidden" name="nonce" value="<?php echo wp_create_nonce( 'bontact_login_' . get_current_user_id() ); ?>" />
