@@ -7,13 +7,13 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 
 == Short Description ==
-Bontact helps you connect with your website visitors and turn them into converting customers, through a multi-channel customer engagement platform, Including  text messages, callback, e-mail, and live chat options.
+Bontact helps you connect with your website visitors and turn them into converting customers, through a multi-channel customer engagement platform, Including  text messages, callback, e-mail, and live chat options.FREE version available now.
 
 
 == Description ==
 Bontact helps you connect with your website visitors and turn them into converting customers, through a multi-channel, flexible, real-time, and easy-to-use customer engagement platform. The platform is the only solution of its kind to combine text messages, callback, e-mail, and live chat options.
 
-Each of your customers may have a different preferred method of contact.  Presenting potential customers, while they are at the peak of interest, with flexible options to connect with your sales team has tremendous business potential. It enhances user experience and satisfaction, increases the “stickiness” of your website (average visit duration), and – most importantly — can significantly increase the number of leads and sales. Combined with the right sales and support staff, Bontact can even turn random online visitors into committed customers.
+Each of your customers may have a different preferred method of contact.  Presenting potential customers, while they are at the peak of interest, with flexible options to connect with your sales team has tremendous business potential. It enhances user experience and satisfaction, increases the “stickiness” of your website (average visit duration), and – most importantly — can significantly increase the number of leads and sales. Combined with the right sales and support staff, Bontact can even turn random online visitors into committed customers.FREE version available now, or full Botact packages for special prices.
 
 
 http://www.youtube.com/watch?v=FFsJ31Q2dI8
