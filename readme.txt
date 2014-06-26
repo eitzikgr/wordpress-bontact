@@ -79,7 +79,7 @@ Yes, a FREE version contains: 2 Chat Rep. + 10 minutes of callback + 10 Text mes
 =The free version package is limited, do you have premium packages? =
 Yes, there are special offers - check the pricing page on our site.
 
-reenshots ==
+== Screenshots ==
 
 
 == Changelog ==
